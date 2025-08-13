@@ -1,12 +1,18 @@
 Script:
+
 #!/bin/bash
+
 directories="/home	/etc	/var/www"
+
 backup_location="/backup"
+
 timestamp=$(date +%Y%m%d_%H%M%S)
+
 backup_file="$backup_location/backup_$timestamp.tar.gz"
 
 tar -czf $backup_file $directories find $backup_location -type f -mtime
 +7 -name "*.tar.gz" -exec rm {} \;
+
 echo "Backup completed: $backup_file" | mail -s "Backup Notification" admin@mycomp.com
 
 
