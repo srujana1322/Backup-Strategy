@@ -1,0 +1,1 @@
+This script creates a backup of essential directories (/home, /etc, /var/www) and saves it to a designated backup location with a timestamped filename. It includes a cleanup mechanism that deletes backups older than 7 days, efficiently managing storage space. The administrator receives an email notification upon completion.
